@@ -26,8 +26,11 @@
 
 ## 貳、操作說明
 **一、安裝步驟：**
-
-
+1. 建立容器：可使用Docker建立多個Linux容器，其中一個容器將作為伺服器，作為申訴平台；其餘容器則模擬多個客戶端，用以進行申訴者與仲裁委員的互動操作。
+2. 安裝軟體：請於容器環境中預先安裝Python與MongoDB，以確保系統能順利運行。
+3. 下載檔案：請於作為伺服器的容器中下載並部署Server檔案，其他作為客戶端節點的容器則下載Client檔案以進行模擬。
+4. 使用相依套件：
+* 伺服器
 ```bash
 pip install Flask
 pip install apscheduler
@@ -35,6 +38,32 @@ pip install cryptography
 pip install pyzipper
 pip install pymongo
 pip install sympy
-
+```
+* 客戶端
+```bash
 pip install requests
 ```
+5. 啟動系統
+* 在伺服器容器中開啟伺服器程式
+```shell
+python server.py
+```
+* 客戶端節點的容器開啟程式
+```shell
+python client.py
+```
+> [!Warning]
+> 請特別注意，在server.py與client.py程式中，請前往固定常數變數宣告的位置，修改為實際建立之容器的主機名稱（host）與連接埠（port），以確保程式能正確運行。
+
+**二、運行方式：**
+1. 分享檔案：請在P2P_Client資料夾中建立一個名為shared的子資料夾。若有檔案欲分享，請將其複製至該資料夾中，即可供其他節點存取。
+2. 主選單提供四項功能選擇，分別為：
+* 註冊分享檔案：當有檔案複製至 shared 資料夾後，需透過此選項完成註冊程序；
+* 查詢分享檔案：可查看目前網路中已註冊的可分享檔案清單；
+* 下載分享檔案：從其他節點下載所需檔案；
+* 退出程式：結束應用程式運行。
+<br>
+  <div align="center">
+  	<img src="./截圖.png" alt="Editor" width="500">
+  </div>
+<br>
