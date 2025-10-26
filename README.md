@@ -10,5 +10,12 @@
 
 本計劃機制在保障匿名性的同時，透過隨機抽選與門檻簽章，確保仲裁決策具集體性，進而提升員工對匿名申訴制度的信任。
 ```bash
+pip install Flask
+pip install apscheduler
+pip install cryptography
+pip install pyzipper
 pip install pymongo
+pip install sympy
+
+pip install requests
 ```
