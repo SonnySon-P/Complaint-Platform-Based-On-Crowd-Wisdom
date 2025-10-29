@@ -41,6 +41,7 @@ pip install sympy
 ```
 * 客戶端
 ```bash
+pip install cryptography
 pip install requests
 ```
 5. 啟動系統
