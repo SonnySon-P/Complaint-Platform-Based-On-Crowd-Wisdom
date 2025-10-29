@@ -54,7 +54,7 @@ python server.py
 python client.py
 ```
 > [!Warning]
-> 請特別注意，在server.py與client.py程式中，請前往固定常數變數宣告的位置，修改為實際建立之容器的主機名稱（host）與連接埠（port），以確保程式能正確運行。
+> 請特別注意，在server.py與client.py程式中，請前往固定常數變數宣告的位置，修改為實際建立之容器的主機名稱（host）與連接埠（port），以確保程式能正確運行。值得一提的是，伺服器程式碼中的secret_sharing.py檔案，是參考GitHub上的[shea256/secret-sharing](https://github.com/shea256/secret-sharing/tree/master)專案進行修改與優化的。
 
 **二、運行方式：**
 1. 分享檔案：請在P2P_Client資料夾中建立一個名為shared的子資料夾。若有檔案欲分享，請將其複製至該資料夾中，即可供其他節點存取。
@@ -68,3 +68,6 @@ python client.py
   	<img src="./截圖.png" alt="Editor" width="500">
   </div>
 <br>
+
+## 參、建議
+本專案的客戶端主要採用命令行介面（CLI）開發，這種方式對於資訊能力較弱的使用者可能會存在一定的操作不便。若未來有進一步的發展機會，將會考慮針對部分功能進行圖形化使用者介面（GUI）的開發，以提升使用者體驗。
