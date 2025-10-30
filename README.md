@@ -55,7 +55,7 @@ python server.py
 python client.py
 ```
 > [!Warning]
-> 請特別注意，在server.py與client.py程式中，請前往固定常數變數宣告的位置，修改為實際建立之容器的主機名稱（host）與連接埠（port），以確保程式能正確運行。值得一提的是，伺服器程式碼中的secret_sharing.py檔案，是參考GitHub上的[shea256/secret-sharing](https://github.com/shea256/secret-sharing/tree/master)專案進行修改與優化的。另一方面，本專案尚未實際測試 send_email.py 功能；若有引用該模組，請於實際應用時進行相應修正。
+> 請特別注意，在server.py與client.py程式中，請前往固定常數變數宣告的位置，修改為實際建立之容器的主機名稱（host）與連接埠（port），以確保程式能正確運行。值得一提的是，伺服器程式碼中的secret_sharing.py檔案，是參考GitHub上的[shea256/secret-sharing](https://github.com/shea256/secret-sharing/tree/master)專案進行修改與優化的。另一方面，本專案尚未實際測試send_email.py功能；若有引用該模組，請於實際應用時進行相應修正。
 
 **二、運行方式：**
 1. 後端伺服器主要負責定期（每月）發送申訴憑證、逐日開票申訴結果與對接前端軟體各項功能請求。
