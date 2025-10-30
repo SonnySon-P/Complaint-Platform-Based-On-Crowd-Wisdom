@@ -153,29 +153,10 @@ def run_vrf_pick_task(mongodb_address, server_email, server_email_password, comp
             f"工作順利，萬事如意！\n\n"
             f"—— 申訴仲裁委員會秘書處"
         )
-        print(body)
+
         document = {
             "name": picked_members[i]
         }
         results_2 = collection_1.find(document)
 
         #run_send_email_task(server_email, server_email_password, results["email"], subject, body)
-
-#run_vrf_pick_task("mongodb://172.18.0.4:27017/", "server_email", "server_email_password", "abc", "123", 5, 10)
-
-mongodb_address = "mongodb://172.18.0.4:27017/"
-public_key = """
------BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvLvWc/oR0o51XroJJslg
-bDzMXAAEzhdKATtmTjkleVJIUHSeorJBBzBQZq18R1CY680cxlmWijGxAagGT8P0
-FVTu5DW8SuIJp+orERlNULXddr4Y3PA27j2EjHJoDb/nL7aslsvpRoyBvRI25m/Q
-/ZIWRnB+KIXSPJxozdRbMFB83aNSI5t02NOkefUzFHwbPoJfgwrJ4GzLeThnQDuV
-P+P5Yuk/ONHt+TLU/lbqjqII4cbB42Oa2SMlReTOsqfF/L6rc3Ad8ZK6PUCeK48k
-Qnxtba/SuwFzUyYdZilXK4k1DlymLrT/ia53LI87mbbqSEZRePYWLgPIZ0ZAWwuM
-HwIDAQAB
------END PUBLIC KEY-----
-"""
-random_number = b'Td\xe4\xf0\xa0\xce\xc6dh\x83\x8a}\xbf\x108 \x90\x01\xf4\xe0\x02c%\xedw\xad\x96\x92$\x9a9\xfb'
-signature = b'[m\xd0\xff\x030lD\x9e\xbd\xd3\x8f\x0fi\xc8t\xf1+@\xc8\xf2|\x1e\x83u\xa5\x1f\xdbR\xb8\xce\x8e\xc0Q\x16^3\xdb\xcd\x92\x8em\x8a\xd7{\x8f\x8fk\x0e\xb7\xef>\xc3\xaa\xc9\x1c\'O\xdf\x1f\xf8c\x052\xbf7\x12Hy<}B\\\xd6X\xf9\x0b\x8c\xbc\xd0\x90\xcb\xc3C\xf9f\x01n\xe1\x8b\xc1j\x9fXa\x1e\x96\x8d%\x03\xe0\x0f\xcf\\>\xf0"n\xca\x8d!\xc0\x94s\x11J\x8d\'u\xa3]\xe1u\x1f\xcd \x97R\x87o\xa6\x90^\xeb\xaa\xa9s#\x93P\x9b\xbe}\x9f\x1e\xaf\xea\x8e\xa8>$\x12\x84\x81S\xf8\xc6\xd8\xb3&\x80\xb8W\xe0\x1c\x11\xa7\xef\xa5ul}\xed4W\xb3\'\xfb\xce\x9b\xb15y\x9b\x86\x98kcB\x11\xe0\x80\xd6qr\xd9\xbd\xb5TW\xf9OB\xe2\xf5\xb4\x88\xban\x87\xad\xb6hz\x93\x81[\xf3\x87R\x15\x1a\x1d\x93\x1e\xa9\xfe\xdfB\'%/\x0brP;M8\xd4#\x10g .J:\x80\xac/$P\xb7\x90\'\xee\x8e'
-name = "test employee26"
-print(run_verify_pick_task(mongodb_address, public_key, random_number, signature, 10, name))
