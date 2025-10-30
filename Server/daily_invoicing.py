@@ -58,6 +58,3 @@ def run_daily_invoicing_task(mongodb_address, server_email, server_email_passwor
             complaint_id = run_set_up_ballot_box_task(mongodb_address)
 
             run_vrf_pick_task(mongodb_address, server_email, server_email_password, document["complaint_content"], complaint_id, threshold, total_shares)
-
-
-run_daily_invoicing_task("mongodb://172.18.0.4:27017/", "123", "456", 5, 10)
