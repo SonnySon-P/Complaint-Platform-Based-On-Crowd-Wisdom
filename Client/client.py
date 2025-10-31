@@ -73,7 +73,7 @@ def submit_complaint_content():
 def verification_committee_selection():
     public_key = input("請輸入公鑰： ")
     random_number = input("請輸入隨機數： ")
-    signature = input("請輸入簽名： ")
+    signature = input("請輸入簽章： ")
     selected_member = input("請輸入你的名字： ")
 
     result = run_verify_committee_selection_task(RESTFULAPI_ADDRESS, public_key, ast.literal_eval(random_number), ast.literal_eval(signature), selected_member)
